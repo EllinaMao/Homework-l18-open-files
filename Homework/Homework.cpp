@@ -1,5 +1,7 @@
 #include <iostream>
-//#include "task1.h"
+#include "task1.h"
+#include "task2.h"
+
 #include "file1.h"
 #include "file2.h"
 
@@ -9,14 +11,7 @@ using namespace std;
 
 
 /*
-Задание 2
-Дан текстовый файл. Необходимо создать новый файл и записать в него следующую статистику по исходному файлу:
 
-Количество символов;
-Количество строк;
-Количество гласных букв;
-Количество согласных букв;
-Количество цифр.
 Задание 3
 Шифр Цезаря — один из древнейших шифров. При шифровании каждый символ заменяется другим, отстоящим от него в алфавите на фиксированное число позиций.
 
@@ -35,27 +30,40 @@ using namespace std;
 
 int main()
 {
-//#ifdef task1
+#ifdef task1
+	cout << "Task 1" << endl;
+	file1 file1_t1;
+	file2 file2_t1;
 
-	//file1 f1;
-	//file2 f2;
+	CompareFiles(file1_t1, file2_t1);
 
-	//Openfiles(f1);
-	////cout << "File contents:\n" << f1.bufffile << endl;
+#endif
+#ifdef task2
+	cout << "Task 2" << endl;
+	file1 file_t2;
+	
+	Statistic stats;
 
-	//Openfiles(f2);
-	////cout << "File contents:\n" << f2.bufffile << endl;
+	stats.CountSimbols(file_t2);
+	stats.CountStrings(file_t2);
+	stats.CountNumbers(file_t2);
+	stats.CountVowelsAndConsonats(file_t2);
 
-	//CompareFiles(f1, f2);
+	stats.GetAllCounts();
 
-//#elif define task2
-
-
-
-
-
+#endif
+#ifdef task3
 
 
 
-//#endif
+
+
+
+
+
+
+
+
+
+#endif
 }

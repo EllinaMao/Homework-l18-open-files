@@ -11,10 +11,12 @@ void CompareFiles(file1& f1, file2& f2) {
    char* next_token1 = nullptr;  
    char* next_token2 = nullptr;  
 
-   // creating tokens!
-   token1 = strtok_s(f1.bufffile, seps, &next_token1);  
-   token2 = strtok_s(f2.bufffile, seps, &next_token2);  
+   char* tempBuffFile1 = _strdup(f1.bufffile);
+   char* tempBuffFile2 = _strdup(f2.bufffile);
 
+   // creating tokens!
+   token1 = strtok_s(tempBuffFile1, seps, &next_token1);
+   token2 = strtok_s(tempBuffFile2, seps, &next_token2);
    while (token1 != nullptr && token2 != nullptr) {  
        if (strcmp(token1, token2) != 0) {  
            cout << "Mismatch found:" << endl;  
@@ -35,5 +37,7 @@ void CompareFiles(file1& f1, file2& f2) {
        cout << "Extra line in File2: " << token2 << endl;  
        token2 = strtok_s(nullptr, seps, &next_token2);  
    }  
+
+   cout << endl;
 }
 

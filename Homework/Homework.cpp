@@ -1,13 +1,14 @@
 #include <iostream>
-using namespace std;
+//#include "task1.h"
 #include "file1.h"
 #include "file2.h"
-/*
-Файлы
-Часть 1
-Задание 1
-Дано два текстовых файла. Выяснить, совпадают ли их строки. Если нет, то вывести несовпадающую строку из каждого файла.
 
+
+
+using namespace std;
+
+
+/*
 Задание 2
 Дан текстовый файл. Необходимо создать новый файл и записать в него следующую статистику по исходному файлу:
 
@@ -35,17 +36,26 @@ using namespace std;
 int main()
 {
 //#ifdef task1
-//
-	file1 f1;
-	file2 f2;
 
-	Openfiles(f1);
-	//cout << "File contents:\n" << f1.bufffile << endl;
+	//file1 f1;
+	//file2 f2;
 
-	Openfiles(f2);
-	//cout << "File contents:\n" << f2.bufffile << endl;
+	//Openfiles(f1);
+	////cout << "File contents:\n" << f1.bufffile << endl;
+
+	//Openfiles(f2);
+	////cout << "File contents:\n" << f2.bufffile << endl;
+
+	//CompareFiles(f1, f2);
+
+//#elif define task2
 
 
 
-//#endif // DEBUG
+
+
+
+
+
+//#endif
 }

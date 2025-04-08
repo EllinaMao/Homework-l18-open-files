@@ -7,7 +7,7 @@
 using namespace std;
 
 struct file1 {
-	const char* filename = "LoremIpsum.txt";
+	const char* filename = "Fairytale.txt";
 
 	FILE* f = nullptr;
 
@@ -15,11 +15,6 @@ struct file1 {
 };
 
 
-
-
-
-//Задание 1
-//Дано два текстовых файла.Выяснить, совпадают ли их строки.Если нет, то вывести несовпадающую строку из каждого файла.
 
 void Openfiles(file1&t);
 

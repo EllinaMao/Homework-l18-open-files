@@ -37,5 +37,7 @@ void CompareFiles(file1& f1, file2& f2) {
        cout << "Extra line in File2: " << token2 << endl;  
        token2 = strtok_s(nullptr, seps, &next_token2);  
    }  
+
+   cout << endl;
 }
 

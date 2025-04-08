@@ -30,24 +30,40 @@ using namespace std;
 
 int main()
 {
-//#ifdef task1
-//
-	//file1 f1;
-	//file2 f2;
+#ifdef task1
+	cout << "Task 1" << endl;
+	file1 file1_t1;
+	file2 file2_t1;
 
-	//CompareFiles(f1, f2);
+	CompareFiles(file1_t1, file2_t1);
 
-////#elif define task2
-//
-
-	file1 f1;
+#endif
+#ifdef task2
+	cout << "Task 2" << endl;
+	file1 file_t2;
 	
 	Statistic stats;
 
-	stats.CountStrings(f1);
-	cout << stats.strings;
+	stats.CountSimbols(file_t2);
+	stats.CountStrings(file_t2);
+	stats.CountNumbers(file_t2);
+	stats.CountVowelsAndConsonats(file_t2);
+
+	stats.GetAllCounts();
+
+#endif
+#ifdef task3
 
 
 
-//#endif
+
+
+
+
+
+
+
+
+
+#endif
 }

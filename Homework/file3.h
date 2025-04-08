@@ -2,19 +2,18 @@
 #include <iostream>
 #include <stdio.h>
 #include <io.h>
+using namespace std;
 
-struct file2 {
-	const char* filename = "FairytaleAltered.txt";
+struct file3
+{
+	const char* filename = "task3.txt";
+
 	FILE* f = nullptr;
 
 	char* bufffile = nullptr;
 
 
-	file2();
-	~file2();
+
+	file3();
+	~file3();
 };
-
-
-
-
-

@@ -2,8 +2,8 @@
 //Задание 1
 //Дано два текстовых файла.Выяснить, совпадают ли их строки.Если нет, то вывести несовпадающую строку из каждого файла.
 
-#ifndef task1
-#define task1
+#ifndef TASK1
+#define TASK1
 
 #include "file1.h"
 #include "file2.h"

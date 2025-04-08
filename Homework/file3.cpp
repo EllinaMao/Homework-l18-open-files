@@ -1,6 +1,7 @@
-#include "file1.h"
+#include "file3.h"
+#include "windows.h"
 
-file1::file1()
+file3::file3()
 {
     fopen_s(&f, filename, "r");
     if (f == nullptr) {
@@ -11,14 +12,13 @@ file1::file1()
     //cout << "descriptor: " << _fileno(t.f) << endl;
     int length = _filelength(_fileno(f));
 
-    bufffile = new char[length + 1]; // +1 for null terminator
+    bufffile = new char[length + 1];
     fread(bufffile, sizeof(char), length, f);
-    bufffile[length] = '\0'; // Null-terminate the buffer
+    bufffile[length] = '\0';
 
     fclose(f);
 }
-
-file1::~file1() {
+file3::~file3() {
     if (bufffile) {
         delete[] bufffile;
         bufffile = nullptr;

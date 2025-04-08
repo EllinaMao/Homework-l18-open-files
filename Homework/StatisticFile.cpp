@@ -1,4 +1,6 @@
 #include "StatisticFile.h"
+#ifdef TASK2
+
 
 StatsFile::StatsFile()
 {
@@ -56,3 +58,5 @@ void ReadableFile(Statistic& s, StatsFile& f)
 
     fclose(f.f);
 }
+
+#endif // TASK2

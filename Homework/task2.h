@@ -1,6 +1,6 @@
 #pragma once
-#ifndef task2
-#define task2
+#ifndef TASK2
+#define TASK2
 
 #include "file1.h"
 #include "ctype.h"

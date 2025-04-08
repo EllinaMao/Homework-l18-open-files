@@ -4,7 +4,7 @@
 
 #include "file1.h"
 #include "file2.h"
-
+#include "StatisticFile.h"
 
 
 using namespace std;
@@ -41,7 +41,7 @@ int main()
 #ifdef task2
 	cout << "Task 2" << endl;
 	file1 file_t2;
-	
+
 	Statistic stats;
 
 	stats.CountSimbols(file_t2);
@@ -50,6 +50,11 @@ int main()
 	stats.CountVowelsAndConsonats(file_t2);
 
 	stats.GetAllCounts();
+	cout << "Creating a binary file" << endl;
+	StatsFile stats_file(stats);
+
+	cout << "Creating a txt file" << endl;
+	ReadableFile(stats, stats_file);
 
 #endif
 #ifdef task3

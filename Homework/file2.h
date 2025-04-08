@@ -4,7 +4,7 @@
 #include <io.h>
 
 struct file2 {
-	const char* filename = "LoremIpsumAltered.txt";
+	const char* filename = "FairytaleAltered.txt";
 	FILE* f = nullptr;
 
 	char* bufffile = nullptr;

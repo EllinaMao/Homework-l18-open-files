@@ -1,6 +1,6 @@
-#include "file1.h"
+#include "file3.h"
 
-file1::file1()
+file3::file3()
 {
     fopen_s(&f, filename, "r");
     if (f == nullptr) {
@@ -17,8 +17,7 @@ file1::file1()
 
     fclose(f);
 }
-
-file1::~file1() {
+file3::~file3() {
     if (bufffile) {
         delete[] bufffile;
         bufffile = nullptr;

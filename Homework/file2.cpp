@@ -17,3 +17,10 @@ file2::file2()
 
     fclose(f);
 }
+
+file2::~file2() {
+    if (bufffile) {
+        delete[] bufffile;
+        bufffile = nullptr;
+    }
+}

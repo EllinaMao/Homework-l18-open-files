@@ -9,10 +9,11 @@ struct file2 {
 
 	char* bufffile = nullptr;
 
+
+	file2();
 };
 
 
-void Openfiles(file2& t);
 
 
 

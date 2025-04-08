@@ -12,10 +12,12 @@ struct file1 {
 	FILE* f = nullptr;
 
 	char* bufffile = nullptr;
+
+
+
+	file1();
 };
 
 
-
-void Openfiles(file1&t);
 
 

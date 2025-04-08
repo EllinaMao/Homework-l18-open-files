@@ -1,20 +1,19 @@
 #include "file1.h"
 
-void Openfiles(file1&t)
+file1::file1()
 {
-    fopen_s(&t.f, t.filename, "r");
-    if (t.f == nullptr) {
+    fopen_s(&f, filename, "r");
+    if (f == nullptr) {
         perror("error opening task");
         return;
     }
 
     //cout << "descriptor: " << _fileno(t.f) << endl;
-    int length = _filelength(_fileno(t.f));
+    int length = _filelength(_fileno(f));
 
-    t.bufffile = new char[length + 1]; // +1 for null terminator
-    fread(t.bufffile, sizeof(char), length, t.f);
-    t.bufffile[length] = '\0'; // Null-terminate the buffer
+    bufffile = new char[length + 1]; // +1 for null terminator
+    fread(bufffile, sizeof(char), length, f);
+    bufffile[length] = '\0'; // Null-terminate the buffer
 
-    fclose(t.f);
-    }
-
+    fclose(f);
+}

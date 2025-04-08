@@ -17,8 +17,4 @@
 void CompareFiles(file1& f1, file2& f2);
 
 
-
-
-
- 
 #endif // !task1

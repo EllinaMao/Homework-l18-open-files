@@ -6,7 +6,7 @@ using namespace std;
 
 struct file3
 {
-	const char* filename = "Fairytale.txt";
+	const char* filename = "task3.txt";
 
 	FILE* f = nullptr;
 

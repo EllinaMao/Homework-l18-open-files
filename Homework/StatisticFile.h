@@ -1,5 +1,5 @@
 #pragma once
-
+#ifdef TASK2
 #include <iostream>
 #include <stdio.h>
 #include <io.h>
@@ -21,3 +21,4 @@ struct StatsFile {
 
 
 void ReadableFile(Statistic&s, StatsFile&f);
+#endif // DEBUG

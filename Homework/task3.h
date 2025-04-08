@@ -12,12 +12,12 @@
 //
 Дан текстовый файл. Зашифровать его, используя шифр Цезаря. Результат записать в другой файл.
 */
+#ifndef TASK3
 #define TASK3
 #include "file3.h"
 
-
 struct Encripted {
-	char shift = 3;
+	int shift = 3;
 	char* bufffile = nullptr;
 	const char* Savefile = "Caesar.txt";
 	FILE* caesar_file = nullptr;
@@ -31,3 +31,5 @@ void SaveInFile()const;
 };
 
 
+
+#endif//TASK3

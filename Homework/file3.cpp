@@ -1,4 +1,5 @@
 #include "file3.h"
+#include "windows.h"
 
 file3::file3()
 {
@@ -11,9 +12,9 @@ file3::file3()
     //cout << "descriptor: " << _fileno(t.f) << endl;
     int length = _filelength(_fileno(f));
 
-    bufffile = new char[length + 1]; // +1 for null terminator
+    bufffile = new char[length + 1];
     fread(bufffile, sizeof(char), length, f);
-    bufffile[length] = '\0'; // Null-terminate the buffer
+    bufffile[length] = '\0';
 
     fclose(f);
 }

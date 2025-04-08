@@ -1,17 +1,24 @@
 #include "task3.h"
-///*
-//    char shift = 3;
-//    char* bufffile = nullptr;
-//    const char* Savefile = "Caesar.txt";
-//    FILE* caesar_file = nullptr;
-//*/
-
-void Encripted::CaesarEncryptFile(file3&f)
-{  
-    
+#include "windows.h"
 
 
+void Encripted::CaesarEncryptFile(file3& f)
+{
+    if (!f.bufffile) {
+        perror("Input buffer is null");
+        return;
+    }
+
+    size_t size = strlen(f.bufffile) + 1;
+    bufffile = new char[size];
+    for (size_t i = 0; i < size; i++) {
+        bufffile[i] = f.bufffile[i] + shift;
+        cout << f.bufffile[i];
+    }
+    bufffile[size - 1] = '\0';
+    cout << bufffile << endl;
 }
+
 
 void Encripted::SaveInFile()const
 {

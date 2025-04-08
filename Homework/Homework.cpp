@@ -1,8 +1,8 @@
 #include <iostream>
 #include "windows.h"
 
-#include "task1.h"
-#include "task2.h"
+//#include "task1.h"
+//#include "task2.h"
 #include "task3.h"
 
 #include "file1.h"

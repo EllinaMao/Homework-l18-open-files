@@ -17,19 +17,16 @@
 #include "file3.h"
 
 struct Encripted {
-	int shift = 3;
-	char* bufffile = nullptr;
-	const char* Savefile = "Caesar.txt";
-	FILE* caesar_file = nullptr;
+    int shift = 3;
+    char* bufffile = nullptr;
+    const char* Savefile = "Caesar.txt";
+    FILE* caesar_file = nullptr;
 
 
+    void CaesarEncryptFile(file3& f);
+    void SaveInFile() const;
 
-void CaesarEncryptFile(file3&f);
-void SaveInFile()const;
-
-~Encripted();
+    ~Encripted();
 };
 
-
-
-#endif//TASK3
+#endif // TASK3

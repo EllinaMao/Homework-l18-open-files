@@ -1,45 +1,68 @@
 #include "task3.h"
 #include "windows.h"
+#include <iostream>
+using namespace std;
 
 
 void Encripted::CaesarEncryptFile(file3& f)
 {
-    if (!f.bufffile) {
-        perror("Input buffer is null");
+    f.filename.open("task3.txt");
+    // Read the file content into a string
+    string fileContent((istreambuf_iterator<char>(f.filename)), istreambuf_iterator<char>());
+
+    if (fileContent.size() <= 1) {
+        cerr << "Error: File content is too small to encrypt!" << endl;
+        f.filename.close();
         return;
     }
+    // Allocate memory for the encrypted content
+    bufffile = new char[fileContent.size() + 1];
+    setlocale(LC_ALL, "ru_RU.UTF-8");
 
-    size_t size = strlen(f.bufffile) + 1;
-    bufffile = new char[size];
-    for (size_t i = 0; i < size; i++) {
-        bufffile[i] = f.bufffile[i] + shift;
-        cout << f.bufffile[i];
+    for (size_t i = 0; i < fileContent.size(); ++i) {
+        char c = fileContent[i];
+        if ((c >= 'À' && c <= 'ß') || (c >= 'à' && c <= 'ÿ')) {
+ 
+            char base = (c >= 'À' && c <= 'ß') ? 'À' : 'à';
+
+
+            bufffile[i] = (c - base + shift) % 32 + base;
+        }
+        else {
+
+            bufffile[i] = c;
+        }
     }
-    bufffile[size - 1] = '\0';
-    cout << bufffile << endl;
+
+
+    // Null-terminate the encrypted content
+    bufffile[fileContent.size()] = '\0';
+
+    // Close the input file
+    f.filename.close();
 }
 
-
-void Encripted::SaveInFile()const
+void Encripted::SaveInFile() const
 {
-    // Ensure the buffer is valid
     if (!bufffile) {
-        perror("Buffer is null");
+        cerr << "Error: No encrypted content to save!" << endl;
         return;
     }
 
-    // Open the file for writing
-    FILE* file = nullptr;
-    if (fopen_s(&file, Savefile, "w") != 0) {
-        perror("Error opening file for writing");
+    // Open the output file
+    ofstream outFile(Savefile);
+    if (!outFile.is_open()) {
+        cerr << "Error: Could not open file for saving!" << endl;
         return;
     }
 
-    // Write the encrypted buffer to the file
-    if (file) {
-        fputs(bufffile, file);
-        fclose(file);
-    }
+    // Write the encrypted content to the file
+    outFile << bufffile;
+
+    // Close the output file
+    outFile.close();
+
+    cout << "Encrypted content saved to " << Savefile << endl;
 }
 
 

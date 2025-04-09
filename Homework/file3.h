@@ -1,19 +1,21 @@
 #pragma once
-#include <iostream>
-#include <stdio.h>
-#include <io.h>
+
+#include "windows.h"
+#include <string>
+#include <fstream>
+#include <sstream>
+
 using namespace std;
 
 struct file3
 {
-	const char* filename = "task3.txt";
+string s;
 
-	FILE* f = nullptr;
+ifstream filename;
 
-	char* bufffile = nullptr;
+file3();
 
 
+~file3();
 
-	file3();
-	~file3();
 };

@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "windows.h"
 
 //#include "task1.h"
@@ -48,12 +49,13 @@ int main()
 	cout << "Task 3" << endl;
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-
 	file3 file_t3;
 	Encripted task3;
 
+
 	task3.CaesarEncryptFile(file_t3);
 	task3.SaveInFile();
+
 
 
 

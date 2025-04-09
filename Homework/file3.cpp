@@ -1,26 +1,22 @@
-#include "file3.h"
-#include "windows.h"
+#include "file3.h"  
+#include <iostream> 
 
-file3::file3()
-{
-    fopen_s(&f, filename, "r");
-    if (f == nullptr) {
-        perror("error opening task");
-        return;
-    }
+file3::file3()  
+{  
+  filename.open("task3.txt");  
+  if (filename.is_open())  
+  {
+	  SetConsoleCP(1251);
+	  SetConsoleOutputCP(1251);
+      getline(filename, s);  
+	  filename.close();
+  }  
+}  
 
-    //cout << "descriptor: " << _fileno(t.f) << endl;
-    int length = _filelength(_fileno(f));
-
-    bufffile = new char[length + 1];
-    fread(bufffile, sizeof(char), length, f);
-    bufffile[length] = '\0';
-
-    fclose(f);
-}
-file3::~file3() {
-    if (bufffile) {
-        delete[] bufffile;
-        bufffile = nullptr;
-    }
+file3::~file3()  
+{  
+if (filename.is_open())  
+{  
+	filename.close();  
+}  
 }
